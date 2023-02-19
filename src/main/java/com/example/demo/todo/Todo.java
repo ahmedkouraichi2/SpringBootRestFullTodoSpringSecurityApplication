@@ -1,6 +1,8 @@
 package com.example.demo.todo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -8,8 +10,11 @@ import jakarta.persistence.Table;
 @Table(name="todos")
 public class Todo {
 
-    @Id
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
+	
+	
     private String title;
     private String description;
     private long timestamp ;
